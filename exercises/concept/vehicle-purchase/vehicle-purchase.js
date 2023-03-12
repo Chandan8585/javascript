@@ -3,7 +3,6 @@
 // The line above enables type checking for this file. Various IDEs interpret
 // the @ts-check directive. It will give you helpful autocompletion when
 // implementing this exercise.
-
 /**
  * Determines whether or not you need a licence to operate a certain kind of vehicle.
  *
@@ -11,9 +10,13 @@
  * @returns {boolean} whether a license is required
  */
 export function needsLicense(kind) {
-
+  if(kind=='car' || kind=='truck'){
+    return true;
+  }
+  else{
+    return false
+  }
 }
-
 /**
  * Helps choosing between two options by recommending the one that
  * comes first in dictionary order.
@@ -23,9 +26,13 @@ export function needsLicense(kind) {
  * @returns {string} a sentence of advice which option to choose
  */
 export function chooseVehicle(option1, option2) {
-  throw new Error('Please implement the chooseVehicle function');
+         if(option1 > option2){
+           return option2 + " is clearly the better choice.";
+         }
+  else{
+  return option1 + " is clearly the better choice.";
+  }
 }
-
 /**
  * Calculates an estimate for the price of a used vehicle in the dealership
  * based on the original price and the age of the vehicle.
@@ -35,5 +42,13 @@ export function chooseVehicle(option1, option2) {
  * @returns {number} expected resell price in the dealership
  */
 export function calculateResellPrice(originalPrice, age) {
-  throw new Error('Please implement the calculateResellPrice function');
+  if(age< 3){
+    return originalPrice*0.8 ;
+  }
+  else if(age >= 3 && age<=10){
+       return originalPrice*0.7;          
+}
+  else if(age>10){
+    return originalPrice*0.5 ;
+  }
 }
